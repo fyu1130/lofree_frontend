@@ -9,7 +9,7 @@
     "lint": "eslint . --ext .ts,.tsx --fix",
     "format": "prettier --write .",
     "stylelint": "stylelint \"**/*.{css,scss}\" --fix",
-    "prepare": "husky install"
+    "prepare": "echo 'husky manually set in .husky'"
   },
   "dependencies": {
     "next": "14.2.3",

@@ -41,6 +41,8 @@
 ## 構築手順
 
 ```bash
+git clone git@github.com:fyu1130/lofree_frontend.git
+cd lofree_frontend
 # 依存パッケージのインストール
 npm install
 # サーバ起動
@@ -78,6 +80,25 @@ npm run lint
 npm run format
 # ESLint によるTypeScript / JSX コードの静的解析と自動修正
 npm run stylelint
+```
+
+### 自動整形（commit時）
+
+- ※wsl2上なので少し手動多め
+```bash
+# 初期化されていない場合のみ
+mkdir -p .husky/_ && curl -o .husky/_/husky.sh https://raw.githubusercontent.com/typicode/husky/main/templates/_/husky.sh && chmod +x .husky/_/husky.sh
+
+# pre-commit hook 手動作成（実行権限も忘れずに）
+cat <<EOF > .husky/pre-commit
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+
+npx lint-staged
+EOF
+
+chmod +x .husky/pre-commit
+
 ```
 
 ## 🌐 デプロイ環境
