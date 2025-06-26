@@ -211,7 +211,7 @@
 }
 
 @media (prefers-color-scheme: dark) {
-  .vercelLogo {
+  .vercel_logo {
     filter: invert(1);
   }
 

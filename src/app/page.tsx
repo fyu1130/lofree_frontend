@@ -1,9 +1,16 @@
+'use client';
+
 import Image from "next/image";
 import styles from "./page.module.css";
 
 export default function Home() {
-  return (
-    <main className={styles.main}>
+    const environment = process.env.NEXT_PUBLIC_ENV;
+    const apiUrl = process.env.NEXT_PUBLIC_API_URL;
+    return (
+      
+      <main className={styles.main}>
+        <p><strong>Environment:</strong> {environment}</p>
+        <p><strong>API URL:</strong> {apiUrl}</p>
       <div className={styles.description}>
         <p>
           Get started by editing&nbsp;
@@ -19,7 +26,7 @@ export default function Home() {
             <Image
               src="/vercel.svg"
               alt="Vercel Logo"
-              className={styles.vercelLogo}
+              className={styles.vercel_logo}
               width={100}
               height={24}
               priority
